@@ -4,30 +4,21 @@ module Main exposing (..)
 import Html exposing (Html, button, div, text, program)
 import Html.Events exposing (onClick)
 
-
 -- MODEL
-
 
 type alias Model =
     Int
-
 
 init : ( Model, Cmd Msg )
 init =
     ( 0, Cmd.none )
 
-
-
 -- MESSAGES
-
 
 type Msg
     = Increment Int
 
-
-
 -- VIEW
-
 
 view : Model -> Html Msg
 view model =
@@ -36,10 +27,7 @@ view model =
         , text (toString model)
         ]
 
-
-
 -- UPDATE
-
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -47,19 +35,13 @@ update msg model =
         Increment howMuch ->
             ( model + howMuch, Cmd.none )
 
-
-
 -- SUBSCRIPTIONS
-
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.none
 
-
-
 -- MAIN
-
 
 main : Program Never Model Msg
 main =
